@@ -1,0 +1,70 @@
+소원쌤의 지구과학 탐험실 — 사용 안내
+
+1. 처음 열기
+압축 파일을 먼저 풀고, earth-science-lab 폴더 안의 index.html을 더블 클릭하세요.
+인터넷이나 로그인 없이 홈페이지가 열립니다. 지층 탐험대도 함께 포함되어 있습니다.
+images와 fonts 폴더는 index.html과 같은 폴더에 두세요.
+
+2. GitHub에 업로드
+저장소 최상위에 index.html, images, fonts, apps 폴더를 올리세요.
+earth-science-lab 폴더 자체가 아니라 그 안의 파일과 폴더를 올립니다.
+
+3. Vercel 배포 설정
+Framework Preset: Other
+Root Directory: 기본값(저장소 최상위)
+Build Command: Override를 켜고 빈칸 유지
+Output Directory: .
+환경 변수는 필요 없습니다.
+
+4. 기상 관측소 방탈출과 마레아 연결
+현재 두 앱은 실제 파일이 없어 홈페이지에서 준비 중으로 표시합니다.
+기상 앱 파일을 apps/weather-escape/index.html에 넣으세요.
+마레아 앱 파일을 apps/marea/index.html에 넣으세요.
+앱에 별도의 이미지·음악 파일이 있으면 상대경로 구조를 유지해 함께 넣으세요.
+홈페이지 index.html을 메모장 또는 코드 편집기로 열어 APPS를 검색하세요.
+해당 앱의 ready: false를 ready: true로 바꾸고 저장하세요.
+앱을 이미 다른 주소에 공개했다면 href를 전체 https 주소로 바꿔도 됩니다.
+
+5. 새 앱 추가
+홈페이지 index.html의 APPS 목록에 기존 항목 하나를 복사해 추가하세요.
+각 항목 사이에는 쉼표가 필요합니다.
+아래 예시는 목록의 마지막 항목 뒤에 쉼표를 붙인 다음 추가합니다.
+
+{ id: 'star-evolution', title: '별의 진화 탐험', category: '천문', kind: '시뮬레이션',
+  topic: '별의 특성과 진화', description: '별의 일생을 탐험해요.',
+  minutes: 30, image: 'images/star-evolution.webp',
+  href: 'apps/star-evolution/index.html', ready: true }
+
+id: 중복 없는 영문 이름
+category: 대기·해양 / 지질 / 천문
+kind: 방탈출 / RPG / 시뮬레이션 등
+minutes: 예상 활동 시간(분)
+image: 카드에 쓸 실제 이미지 파일의 경로
+href: 실행할 앱의 경로 또는 https 주소
+ready: 파일과 링크를 준비했으면 true, 아직 준비 중이면 false
+
+앱 파일은 apps/star-evolution/index.html에 저장하고,
+이미지는 images/star-evolution.webp에 저장합니다.
+이미지의 확장자는 실제 파일 형식과 맞춰주세요.
+새 앱 추가 후 홈페이지 파일, 새 앱 폴더와 이미지를 GitHub에 올리면 됩니다.
+
+6. 오늘의 탐험 바꾸기
+홈페이지 코드에서 FEATURED_ID를 검색하고 원하는 앱의 id로 바꾸세요.
+예: const FEATURED_ID = 'weather-escape';
+실행 가능한 앱(ready: true) 중에서 고르세요.
+
+7. 기존 앱 수정
+해당 앱 폴더의 index.html만 교체하세요.
+카드 제목·학습 주제·시간·이미지를 바꾸려면 홈페이지의 APPS도 수정합니다.
+
+8. 포함 파일
+index.html: 모음 홈페이지(HTML·CSS·JavaScript 포함)
+images/: 카드 및 오늘의 탐험 일러스트
+fonts/Jua.woff: 주아체 글꼴
+fonts/OFL.txt: 주아체 라이선스
+fonts/NotoSansKR.woff: 본문용 Noto Sans KR 글꼴(일부 문자 범위로 축소)
+fonts/NotoSansKR-OFL.txt: Noto Sans KR 라이선스
+apps/geo-note/index.html: 기존 지층 탐험대(내용 변경 없이 복사)
+
+홈페이지는 서버 저장이나 학생별 기록 수집을 하지 않습니다.
+각 앱에서 기존에 제공하던 기능은 그대로 유지됩니다.
